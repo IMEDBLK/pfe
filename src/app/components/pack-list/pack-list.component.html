@@ -1,0 +1,38 @@
+
+
+
+
+
+<div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-mdnowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2 class=""> pack List</h2>
+        <button type="button" class="btn btn-outline-primary" routerLinkActive="Active" routerLink="/add-pack">Ajouter</button>
+      </div>
+
+<table class="table-responsive" [cellPadding]="20">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">nom</th>
+            <th scope="col">prix</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pack of packs; let i = index">
+            <th scope="row">{{pack.id}}</th>
+            <td>{{pack.name}}</td>
+            <td>{{pack.price}}</td>
+            <td>{{pack.description}}</td>
+            <td>
+                <button type="button" class="btn btn-danger"  (click)="delete(pack.id,i)">supprimé</button>
+                <button type="button" class="btn btn-success" routerLink="/edit-pack/{{pack.id}}">modifier</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+

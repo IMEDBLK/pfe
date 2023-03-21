@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="d-flex justify-content-between flex-wrap flex-mdnowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2 class=""> auto-école List</h2>
+
+        <button type="button" class="btn btn-outline-primary" routerLinkActive="Active" routerLink="/add-autoecole">Ajouter</button>
+    </div>
+
+<table class="table-responsive" [cellPadding]="20">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">mail</th>
+            <th scope="col">num_tel</th>
+            <th scope="col">matricule</th>
+            <th scope="col">nom</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let autoecole of autoecole; let i = index">
+            <th scope="row">{{autoecole.id}}</th>
+            <td>{{autoecole.mail}}</td>
+            <td>{{autoecole.num_tel}}</td>
+            <td>{{autoecole.matricule}}</td>
+            <td>{{autoecole.nom}}</td>
+
+
+            <td>
+                <button type="button" class="btn btn-danger"  (click)="delete(autoecole.id,i)">supprimé</button>
+                <button type="button" class="btn btn-success" routerLink="/edit-autoecole/{{autoecole.id}}">modifier</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+
